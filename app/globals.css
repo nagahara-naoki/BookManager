@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .afterBorder {
+    @apply border-l-4 absolute transform -translate-y-1/2 left-0 h-2/3 top-1/2;
+  }
+}
+
+:root {
+  --color-primary: #3463e9;
+  --color-secondary: #aeb8c3;
+  --color-white: #ffffff;
+  --color-gray: #f3f4f6;
+  --color-green: #49a88c;
+  --color-red: #ec391e;
+  /* 他の色を定義する場合はここに追加してください */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+textarea:not([rows]) {
+  min-height: 10em;
+}
+:target {
+  scroll-margin-block: 5ex;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  /* width: px; */
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(177, 173, 173);
+  border-radius: 10px;
+}
+
+body {
+  overflow: hidden;
+}
