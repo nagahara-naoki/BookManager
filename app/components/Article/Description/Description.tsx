@@ -1,10 +1,5 @@
-"use client";
-import { mockData, saveDataToLocal } from "@/app/mock";
-import Image from "next/image";
-import React, { useState } from "react";
-
-export default function Description() {
-  const [data, setData] = useState<any>(mockData);
+export default function Description(volumeInfo: any) {
+  const data = volumeInfo;
   return (
     <div className="border h-full max-h-96 rounded shadow-sm p-3">
       <span className="p-1 inline-block text-xl font-bold mb-3 border-b-2 border-black">

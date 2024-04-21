@@ -5,9 +5,12 @@ import { FaSearch } from "react-icons/fa";
 import { AiOutlineGithub } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import Link from "next/link";
-import { getDataFromLocal } from "@/app/mock";
+import { mockData } from "@/app/mock";
+import { useSelector } from "react-redux";
 
 export default function SideBar() {
+  const storeBooks = useSelector((state: any) => state.test.value);
+  console.log(storeBooks);
   const [a, seta] = useState(true);
   const isOK = () => {
     seta(!a);
@@ -20,6 +23,7 @@ export default function SideBar() {
   const getChange = (e: string) => {
     setInputChange(e);
   };
+  const bookData = mockData;
   return (
     <div
       className={`border border-gray shadow px-3 h-full  transition-all ${flexWidth}`}
@@ -57,23 +61,10 @@ export default function SideBar() {
         </div>
         <p className={`text-sm m-2 ${isHideen}`}>登録している本一覧</p>
         <div className="overflow-auto h-5/6 pr-1">
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
+          {storeBooks &&
+            storeBooks.map((list: any) => (
+              <BookCard bookData={list} key={list.id} />
+            ))}
         </div>
         <div className="footer flex gap-3 items-center border-t-2 border-gray py-3">
           <div className="icon border w-10 h-10 bg-black rounded-full"></div>

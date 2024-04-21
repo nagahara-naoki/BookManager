@@ -14,7 +14,8 @@ export const mockData = {
     startDate: new Date(),
     finalDate: new Date(),
   },
-  readingMemo: "今日もめも",
+  readingMemo:
+    "今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも今日もめも",
 };
 
 export interface dataType {
@@ -34,16 +35,3 @@ export interface dataType {
   };
   readingMemo?: string;
 }
-
-export const saveDataToLocal = (key: any, data: any) => {
-  localStorage.setItem(key, JSON.stringify(data));
-};
-
-export const getDataFromLocal = (key: any) => {
-  const data = localStorage.getItem(key);
-  return data ? JSON.parse(data) : null;
-};
-
-export const removeDataFromLocal = (key: any) => {
-  localStorage.removeItem(key);
-};

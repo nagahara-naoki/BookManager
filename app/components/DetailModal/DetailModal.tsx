@@ -1,16 +1,23 @@
 import { mockData } from "@/app/mock";
+import { addBook } from "@/app/slice";
 import React from "react";
 import { IconContext } from "react-icons";
 import { IoClose } from "react-icons/io5";
+import { useDispatch } from "react-redux";
 
-export default function DetailModal({ setOpenModal }: any) {
-  const data = mockData;
+export default function DetailModal({ setOpenModal, clickDetail }: any) {
+  const dispatch = useDispatch();
+  const data = clickDetail;
   const modalToggle = (bool: boolean) => {
     setOpenModal(bool);
   };
+  const onRegistoer = (list: any) => {
+    dispatch(addBook(list));
+    modalToggle(false);
+  };
   return (
     <div className="h-full max-h-96 rounded p-3">
-      <div className="flex justify-between items-center p-1 mb-3 border-b-2 border-black">
+      <div className="flex justify-between itemscenter p-1 mb-3 border-b-2 border-black">
         <p>詳細</p>
         <IconContext.Provider value={{ size: "24px" }}>
           <IoClose
@@ -31,7 +38,6 @@ export default function DetailModal({ setOpenModal }: any) {
             style={{
               objectFit: "cover",
             }}
-            className="rounded"
           /> */}
             </div>
           </div>
@@ -71,6 +77,12 @@ export default function DetailModal({ setOpenModal }: any) {
               </p>
             </div>
           </div>
+          <button
+            onClick={() => onRegistoer(data)}
+            className="absolute bottom-4 right-4 border p-2 rounded text-sm hover:bg-red hover:text-white"
+          >
+            登録する
+          </button>
         </div>
       )}
     </div>

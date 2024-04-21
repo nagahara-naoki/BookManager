@@ -5,7 +5,14 @@ import { PieChart, Pie, Cell } from "recharts";
 const data = [{ name: "Group A", value: 1 }];
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
-export default function Progress() {
+export default function Progress(readingDate: any) {
+  const replateDate = (str: string) => {
+    return str.replace(/T\d+:\d+:\d+\.\d+Z/, "");
+  };
+  // 時刻部分を削除
+  const newStartDate = replateDate(readingDate.readingDate.startDate);
+  const newfinaltDate = replateDate(readingDate.readingDate.finalDate);
+
   return (
     <div className="border h-full rounded w-1/2 shadow-sm p-3">
       <span className="inline-block text-xl font-bold p-1 mb-3 border-b-2 border-black">
@@ -23,14 +30,18 @@ export default function Progress() {
               <p className="font-bold text-sm">ページ</p>
             </div>
           </div>
-          <div className="">
-            <p>
-              読み始めた日<span className="ml-7">2002/12/12</span>
-            </p>
-            <p>
-              最後に読んだ日<span className="ml-3">20012/12/12</span>
-            </p>
-          </div>
+          {newStartDate && (
+            <div className="">
+              <p>
+                読み始めた日
+                <span className="ml-7">{newStartDate}</span>
+              </p>
+              <p>
+                最後に読んだ日
+                <span className="ml-3">{newfinaltDate}</span>
+              </p>
+            </div>
+          )}
         </div>
         <div>
           <PieChart width={220} height={180}>
