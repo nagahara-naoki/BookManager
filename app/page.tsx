@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex h-svh ">
         <SideBar />
         <Article />
-        <RightBar />
+        {/* <RightBar /> */}
       </div>
     </Provider>
   );

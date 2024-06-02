@@ -43,8 +43,3 @@ export default function Search() {
     </div>
   );
 }
-
-{
-  /* {searchResultArray && */
-}
-// searchResultArray.map((item) => <SearchCard props={item} />)}

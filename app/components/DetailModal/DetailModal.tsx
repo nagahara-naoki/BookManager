@@ -1,4 +1,3 @@
-import { mockData } from "@/app/mock";
 import { addBook } from "@/app/slice";
 import React from "react";
 import { IconContext } from "react-icons";

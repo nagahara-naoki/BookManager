@@ -15,7 +15,7 @@ export default function SearchComtainer() {
         <Suspense fallback={<div>ローディング中</div>}>
           <Search />
         </Suspense>
-        <RightBar />
+        {/* <RightBar /> */}
       </div>
     </Provider>
   );
